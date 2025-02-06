@@ -27,7 +27,7 @@ namespace Infrastructure.Data.Configurations
             builder.Property(x => x.experiencia).IsRequired();
             builder.HasMany(p => p.habilidades).WithMany(habilidad => habilidad.personajes);
             builder.HasOne(p => p.tipo).WithMany().HasForeignKey(p => p.tipoId);
-            builder.ToTable("Personaje");
+            builder.ToTable("PersonajeNatalia");
         }
     }
 }

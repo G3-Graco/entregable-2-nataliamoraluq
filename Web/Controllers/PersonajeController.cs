@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Services.Services;
 
-namespace Web.Crontrollers
+namespace Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -63,6 +63,24 @@ namespace Web.Crontrollers
 
 
         }
+
+        /*[HttpGet]
+        public async Task<ActionResult<IEnumerable<Personaje>>> Get(int id){
+            //examen 1 - natalia ml - Web > Controllers> PersonajeController.cs
+            var PersonajeBuscado = await _servicio.GetById(id);
+            return Ok(PersonajeBuscado);
+
+            try
+            {
+                var PersonajeBuscado = await _servicio.GetById(id);
+                return Ok(PersonajeBuscado);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }*/
+
 
         [HttpPut("{id}")]
         public async Task<ActionResult<Personaje>> Update(int id, string algo, [FromBody] Personaje personaje)
