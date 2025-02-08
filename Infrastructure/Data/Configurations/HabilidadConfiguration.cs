@@ -25,7 +25,7 @@ namespace Infrastructure.Data.Configurations
             builder.HasMany(h=> h.personajes).WithMany(per => per.habilidades);
 
 
-            builder.ToTable("Habilidad");
+            builder.ToTable("HabilidadNatalia");
         }
     }
 }

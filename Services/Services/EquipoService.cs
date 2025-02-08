@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Web.Controllers
+namespace Services.Services
 {
-    public class xTry
+    public class EquipoService
     {
         
     }

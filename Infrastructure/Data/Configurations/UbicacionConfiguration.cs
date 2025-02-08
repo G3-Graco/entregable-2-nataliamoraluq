@@ -17,7 +17,7 @@ namespace Infrastructure.Data.Configurations
             builder.Property(x => x.nombre).IsRequired().HasMaxLength(255); 
             builder.Property(x => x.descripcion).IsRequired().HasMaxLength(255); 
             builder.Property(x => x.clima).IsRequired().HasMaxLength(255); 
-            builder.ToTable("Ubicacion");
+            builder.ToTable("UbicacionNatalia");
         }
     }
 }

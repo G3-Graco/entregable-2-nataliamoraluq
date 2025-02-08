@@ -24,7 +24,7 @@ namespace Infrastructure.Data.Configurations
             //builder.Property(x => x.habilidades).IsRequired(); 
             //builder.Property(x => x.recompensas).IsRequired();
             builder.Property(x => x.nivelAmenaza).IsRequired(); 
-            builder.ToTable("Enemigo");
+            builder.ToTable("EnemigoNatalia");
         }
     }
 }

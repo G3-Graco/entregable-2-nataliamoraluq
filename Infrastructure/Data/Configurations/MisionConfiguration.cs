@@ -18,7 +18,7 @@ namespace Infrastructure.Data.Configurations
             builder.Property(x => x.objetivos).IsRequired(); 
             builder.Property(x => x.recompensas).IsRequired(); 
             builder.Property(x => x.estado).IsRequired(); 
-            builder.ToTable("Mision");
+            builder.ToTable("MisionNatalia");
         }
         
     }
