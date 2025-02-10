@@ -10,6 +10,11 @@ namespace Infrastructure.Repositories
 {
     public class MisionRepository : BaseRepository<Mision>, IMisionRepository 
     {
-        public  MisionRepository(AppDbContext context) : base(context) {}
+        public  MisionRepository(AppDbContext context) : base(context) 
+        {
+            //return await base.dbSet.Include(x => x.objetivos).ToListAsync();
+            //return await base.dbSet.Include(x => x.recompensas).ToListAsync();
+
+        }
     }
 }

@@ -7,10 +7,9 @@ using FluentValidation;
 
 namespace Services.Validators
 {
-    public class MisionValidators : AbstractValidator<Mision>
+    public class MisionActualizarValidators : AbstractValidator<Mision>
     {
-        public MisionValidators()
-        {
+        public MisionActualizarValidators(){
             RuleFor(x => x.nombre)
                 .NotEmpty()
                 .MaximumLength(255);
@@ -21,6 +20,5 @@ namespace Services.Validators
             RuleFor(x => x.estado)
                 .NotEmpty();
         }
-        
     }
 }
