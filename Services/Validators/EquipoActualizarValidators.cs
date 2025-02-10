@@ -7,10 +7,9 @@ using FluentValidation;
 
 namespace Services.Validators
 {
-    public class EquipoValidators : AbstractValidator<Equipo>
+    public class EquipoActualizarValidators : AbstractValidator<Equipo>
     {
-        public EquipoValidators()
-        {
+        public EquipoActualizarValidators(){
             RuleFor(x => x.casco)
                 .NotEmpty()
                 .MaximumLength(255);
@@ -29,7 +28,6 @@ namespace Services.Validators
             RuleFor(x => x.grebas)
                 .NotEmpty()
                 .MaximumLength(255);
-            
         }
     }
 }
