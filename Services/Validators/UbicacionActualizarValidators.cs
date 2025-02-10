@@ -7,17 +7,16 @@ using FluentValidation;
 
 namespace Services.Validators
 {
-    public class UbicacionValidators : AbstractValidator<Ubicacion>
+    public class UbicacionActualizarValidators : AbstractValidator<Ubicacion>
     {
-        public UbicacionValidators()
-        {
-            RuleFor(ubication => ubication.nombre)
+        public UbicacionActualizarValidators(){
+            RuleFor(ubic => ubic.nombre)
                 .NotEmpty()
                 .MaximumLength(255);
-            RuleFor(ubication => ubication.descripcion)
+            RuleFor(ubic => ubic.descripcion)
                 .NotEmpty()
                 .MaximumLength(255);
-            RuleFor(ubication => ubication.clima)
+            RuleFor(ubic => ubic.clima)
                 .NotEmpty()
                 .MaximumLength(255);
         }
