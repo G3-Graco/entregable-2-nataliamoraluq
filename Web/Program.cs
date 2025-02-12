@@ -17,7 +17,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //examen 1 pregunta B - swagger y como implementarlo - natalia ml
 //Program.cs field > Web project
-/*
+
 builder.Services.AddSwaggerGen(options =>{
     options.SwaggerDoc("v1", new OpenApiInfo
     {
@@ -35,11 +35,15 @@ builder.Services.AddSwaggerGen(options =>{
             Name = "Example License",Url = new Uri("https://example.com/license")
         }
     });
-});*/
+
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+    
+});
+
 //Program.cs field > Web project
-/*
-var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));*/
+
+
 
 
 

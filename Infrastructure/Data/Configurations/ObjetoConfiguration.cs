@@ -18,7 +18,7 @@ namespace Infrastructure.Data.Configurations
             builder.Property(x => x.descripcion).IsRequired().HasMaxLength(255); 
             builder.Property(x => x.tipo).IsRequired().HasMaxLength(255); 
             builder.Property(x => x.estadisticas).IsRequired(); 
-            builder.ToTable("ObjetoNatalia");
+            como error;
         }
     }
 }
