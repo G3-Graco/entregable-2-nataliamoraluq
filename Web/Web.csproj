@@ -21,9 +21,8 @@
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Services\Services.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
-    <!-- Web project > Web.csproj -->
+    <!-- Web project > Web.csproj 
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <NoWarn>$(NoWarn);1591</NoWarn>
+    <NoWarn>$(NoWarn);1591</NoWarn>-->
   </ItemGroup>
-
 </Project>
