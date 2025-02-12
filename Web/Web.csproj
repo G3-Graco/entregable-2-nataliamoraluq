@@ -4,6 +4,9 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- Web project > Web.csproj en el property group
+    <NoWarn>$(NoWarn);1591</NoWarn>-->
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,8 +24,5 @@
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Services\Services.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
-    <!-- Web project > Web.csproj 
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <NoWarn>$(NoWarn);1591</NoWarn>-->
   </ItemGroup>
 </Project>
