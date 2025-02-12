@@ -17,8 +17,13 @@ namespace Web.Controllers
         public UbicacionController(IUbicacionService ubicacionService){
             _servicio = ubicacionService;
         }
+
         // --- HTTP REQUEST: ---
         //[HttpGet] -> GET ALL
+        /// <summary>
+        /// Obtener todas las ubicaciones
+        /// </summary>
+        /// <returns>Lista de Ubicaciones</returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Ubicacion>>> Get()
         {
@@ -27,6 +32,12 @@ namespace Web.Controllers
         }
 
         //[HttpPost] -> CREATE
+
+        /// <summary>
+        /// Crear ubicacion
+        /// </summary>
+        /// <param name="ubicacion"></param>
+        /// <returns>Ubicacion creada</returns>
         [HttpPost]
         public async Task<ActionResult<Ubicacion>> Post([FromBody] Ubicacion ubicacion)
         {
@@ -42,6 +53,12 @@ namespace Web.Controllers
             }
         }
         //[HttpDelete("{id}")] -> DELETE
+
+        /// <summary>
+        /// Eliminar ubicacion
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Ubicacion eliminada</returns>
         [HttpDelete("{id}")]
         public async Task<ActionResult<IEnumerable<Ubicacion>>> Delete(int id)
         {
@@ -56,6 +73,14 @@ namespace Web.Controllers
             }
         }
         //[HttpPut("{id}")] -> UPDATE
+
+        /// <summary>
+        /// Actualziar info de una ubicacion
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="algo"></param>
+        /// <param name="ubicacion"></param>
+        /// <returns>Ubicacion actualizada con la nueva data</returns>
         [HttpPut("{id}")]
         public async Task<ActionResult<Ubicacion>> Update(int id, string algo, [FromBody] Ubicacion ubicacion)
         {
