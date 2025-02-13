@@ -19,7 +19,13 @@ namespace Web.Controllers
         }
 
         // --- HTTP REQUEST: ---
-        //[HttpGet] -> GET ALL
+        
+        // --------------------------------------------------------------------
+        //[HttpGet] -> GET / Get all api <MisionController>
+        /// <summary>
+        /// Obtener todas las misiones registradas
+        /// </summary>
+        /// <returns>Lista de Misiones</returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Mision>>> Get()
         {
@@ -27,7 +33,21 @@ namespace Web.Controllers
             return Ok(Misiones);
         }
 
-        //[HttpPost] -> CREATE
+        //---------------------------------------------------------------------
+        //[HttpPost] -> POST / create api <MisionController>
+        /// <summary>
+        /// Crear mision
+        /// </summary>
+        /// <param name="mision">Instancia de entidad mision</param>
+        /// <returns> mision creada</returns>
+        /// <remarks>
+        /// Ejemplo de un JSON request 
+        /// {
+        ///        "id": 2,
+        ///        "nombre": "mision - catch this pet!-",
+        ///        "estado": "E"  
+        /// }
+        /// </remarks>
         [HttpPost]
         public async Task<ActionResult<Mision>> Post([FromBody] Mision mision)
         {
@@ -43,9 +63,24 @@ namespace Web.Controllers
             }
         }
 
-        //[HttpPut("{id}")] -> UPDATE
+        //---------------------------------------------------------------------
+        //[HttpPut("{id}")] -> PUT / update api <MisionController>
+        /// <summary>
+        /// Actualizar data/info. de una mision
+        /// </summary>
+        /// <param name="id">ID de la mision a actualizar</param>
+        /// <param name="mision">Instancia de entidad mision</param>
+        /// <returns> mision actualizada con la nueva data</returns>
+        /// <remarks>
+        /// Ejemplo de un JSON request 
+        /// {
+        ///        "id": 2,
+        ///        "nombre": "mision - catch this adventurepet!-",
+        ///        "estado": "P"  
+        /// }
+        /// </remarks>
         [HttpPut("{id}")]
-        public async Task<ActionResult<Mision>> Update(int id, string algo, [FromBody] Mision mision)
+        public async Task<ActionResult<Mision>> Update(int id, [FromBody] Mision mision)
         {
             try
             {
@@ -58,7 +93,13 @@ namespace Web.Controllers
             }
         }
 
-        //[HttpDelete("{id}")] -> DELETE
+        // --------------------------------------------------------------------
+        //[HttpDelete("{id}")] -> DELETE / delete api <MisionController>
+        /// <summary>
+        /// Eliminar mision
+        /// </summary>
+        /// <param name="id"> ID de la mision a eliminar </param>
+        /// <returns>Mision eliminada</returns>
         [HttpDelete("{id}")]
         public async Task<ActionResult<IEnumerable<Mision>>> Delete(int id)
         {
@@ -72,6 +113,8 @@ namespace Web.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        //--------------------------------------------------------------------------
 
         //[HttpPost("Aceptar")] -> Aceptar mision-> * MET ESPECIFICO
         //[HttpPost("IndicarProg")] -> Indicar progreso -> * MET ESPECIFICO

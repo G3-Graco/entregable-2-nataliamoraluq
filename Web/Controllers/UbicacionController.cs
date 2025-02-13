@@ -19,7 +19,9 @@ namespace Web.Controllers
         }
 
         // --- HTTP REQUEST: ---
-        //[HttpGet] -> GET ALL
+
+        // --------------------------------------------------------------------
+        //[HttpGet] -> GET / Get all api <UbicacionController>
         /// <summary>
         /// Obtener todas las ubicaciones
         /// </summary>
@@ -31,13 +33,22 @@ namespace Web.Controllers
             return Ok(Ubicaciones);
         }
 
-        //[HttpPost] -> CREATE
-
+        // --------------------------------------------------------------------\
+        //[HttpPost] -> POST / create api <UbicacionController>
         /// <summary>
         /// Crear ubicacion
         /// </summary>
-        /// <param name="ubicacion"></param>
+        /// <param name="ubicacion">instancia de Ubicacion</param>
         /// <returns>Ubicacion creada</returns>
+        /// /// <remarks>
+        /// Ejemplo de un JSON request 
+        /// {
+        ///     "id": 0,
+        ///     "nombre": "UBI-MAIN-N1-TUN",
+        ///     "descripcion": "ubicacion principal del mapa X1Y",
+        ///     "clima": "tundra"
+        /// }
+        /// </remarks>
         [HttpPost]
         public async Task<ActionResult<Ubicacion>> Post([FromBody] Ubicacion ubicacion)
         {
@@ -52,12 +63,13 @@ namespace Web.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        //[HttpDelete("{id}")] -> DELETE
 
+        // --------------------------------------------------------------------
+        //[HttpDelete("{id}")] -> DELETE / delete api <UbicacionController>
         /// <summary>
         /// Eliminar ubicacion
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id"> ID de la ubicacion a eliminar </param>
         /// <returns>Ubicacion eliminada</returns>
         [HttpDelete("{id}")]
         public async Task<ActionResult<IEnumerable<Ubicacion>>> Delete(int id)
@@ -72,17 +84,27 @@ namespace Web.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        //[HttpPut("{id}")] -> UPDATE
 
+
+        // --------------------------------------------------------------------
+        //[HttpPut("{id}")] -> PUT / update api <UbicacionController>
         /// <summary>
-        /// Actualziar info de una ubicacion
+        /// Actualizar data/info. de una ubicacion
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="algo"></param>
-        /// <param name="ubicacion"></param>
-        /// <returns>Ubicacion actualizada con la nueva data</returns>
+        /// <param name="id">ID de la ubicacion a actualizar</param>
+        /// <param name="ubicacion">Instancia de entidad ubicacion</param>
+        /// <returns>ubicacion actualizada con la nueva data</returns>
+        /// <remarks>
+        /// Ejemplo de un JSON request 
+        /// {
+        ///     "id": 0,
+        ///     "nombre": "UBI-LOCT-MAIN-N1-TUN",
+        ///     "descripcion": "ubicacion principal del mapa X1Y",
+        ///     "clima": "tundra"
+        /// }
+        /// </remarks>
         [HttpPut("{id}")]
-        public async Task<ActionResult<Ubicacion>> Update(int id, string algo, [FromBody] Ubicacion ubicacion)
+        public async Task<ActionResult<Ubicacion>> Update(int id, [FromBody] Ubicacion ubicacion)
         {
             try
             {
